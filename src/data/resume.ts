@@ -1,10 +1,9 @@
 export const resumeData = {
   name: "Cheng Pin-Jie",
-  title: "Software Developer",
+  title: "Application Developer",
   about: [
     "Welcome to my portfolio! I am Cheng Pin-Jie, a passionate Software Developer specializing in innovative AI applications, LLM integration (RAG), UI/UX design, Mobile Development, and Full-Stack Web Applications.",
     "I utilize a wide array of Frontend and Backend frameworks and tools to achieve project goals, including OutSystems, Flask, LangChain, Expo, React Native, Flutter etc.",
-    "'Merlina AI', a Retrieval-Augmented Generation (RAG) chatbot for engineering documentation, where I processed unstructured PDFs using LlamaParse, LangChain, and GPT4AllEmbeddings. Besides, I am experienced in creating computer vision models, such as implementing food portion detection using YOLOv8.",
     "I am experienced in managing databases across MySQL, Azure Cloud, MongoDB, and Firebase. I am also adept at integrating REST APIs into application development and performing crucial data handling, including cleaning, parsing, processing, and visualization using Power BI."
   ],
   contact: {
@@ -29,6 +28,7 @@ export const resumeData = {
   experience: [
     {
       company: "PETRONAS Technical Services Sdn Bhd",
+      logo: "/assets/projects/petronas-logo-white.png",
       role: "Software Intern, Full Time",
       location: "KLCC Tower 3",
       period: "Jan - Aug 2024",
@@ -68,21 +68,21 @@ export const resumeData = {
     {
       title: "Merlina AI",
       description: "Created a Gradio-based web interface (PWA) for user-friendly interaction. Developed Merlina AI, a Retrieval-Augmented Generation (RAG) chatbot for engineering documentation. Processed unstructured PDFs using LlamaParse, LangChain, and GPT4AllEmbeddings for semantic search.",
-      technologies: ["Python", "Gradio", "LlamaParse", "LangChain", "RAG"],
+      technologies: ["Python","RAG", "Gradio", "LlamaParse", "LangChain", ],
       technical_paper_link: "https://drive.google.com/file/d/1sthP3MwRzOjK6HQr5AqXX2tRY-Nrr3DM/view?usp=sharing",
       images: ["/assets/projects/merlina ai.png"]
     },
     {
       title: "Car Buddy",
       description: "Structured wireframes to establish the foundation and flow of the design. Developed interactive prototypes using Figma to visualize and test user experiences. Collaborated with fellow designers to refine concepts and ensure design consistency.",
-      technologies: ["Figma", "UI/UX Design", "Prototyping"],
+      technologies: ["Wireframe", "UI/UX Design", "Prototyping"],
       figma_link: "https://www.figma.com/design/0ckx5MgOvKSXKUTMbWAdBO/CarBuddy?t=vCIZIIwIkyu8Wlmd-1",
       images: ["/assets/projects/car buddy.png"]
     },
     {
       title: "Bus Track",
       description: "1st Runner Up of Syntech Hackathon 2023. Designed and developed a cross-platform app in Flutter with clean, consistent, and responsive UI. Created user-centered UI for students and drivers. Implemented schedules and ETA features with clear visual cues.",
-      technologies: ["Flutter", "Cross-platform", "UI/UX"],
+      technologies: ["Flutter", "API", "UI/UX"],
       figma_link: "https://www.figma.com/design/9ovxkz6TElIOTNbAcCE9a3/Bus-Tracking?node-id=0-1&t=vCIZIIwIkyu8Wlmd-1",
       github_link:"https://github.com/CPJ03/Bus-Tracker",
       images: ["/assets/projects/bus track.png"]
@@ -97,9 +97,17 @@ export const resumeData = {
     {
       title:"Cable Lifespan Prediction",
       description: "The calculator is a reactive web-based that was built using Outsystems framework, combine with JavaScript (HighChart JS) and CSS.The calculator helps organization like PETRONAS to make estimations for the turnaround process of cable to be done Onshore/Offshore.",
-      technologies: ["OutSystems", "JavaScript", "CSS"],
+      technologies: ["Petronas","OutSystems", "JavaScript", "CSS"],
       linkedin_link:"https://www.linkedin.com/in/chengpinjie/details/projects/#:~:text=Other%20contributors-,Cable%20Lifespan%20Calculator,-Cable%20Lifespan%20Calculator",
       images: ["/assets/projects/cable lifespan.jpg"]
+    },
+    {
+      title:"Control Valve Database",
+      description:"An OutSystems web that allows database management of control valve inspection records. Implemented advanced search and filtering capabilities to quickly locate specific records based on various criteria. Developed user-friendly interfaces for data entry, editing, and deletion, ensuring data integrity and consistency.",
+      technologies: ["Petronas","OutSystems", "Azure", "MySQL"],
+      paper_link:"https://drive.google.com/file/d/1Mui74WWyaxG766NCej23cTq6HU_ui8V2/view?usp=sharing",
+      figma_link:"https://docs.google.com/presentation/d/1WfyF0WZWI9mZk-Jw_WY7_JRjwTRsCP2C/edit?usp=sharing&ouid=114826231793659609013&rtpof=true&sd=true",
+      images: ["/assets/projects/Control Valve Database.png"]
     },
     {
       title: "Shopbot API",
@@ -114,6 +122,13 @@ export const resumeData = {
       technologies: ["HTML", "Web Scraping"],
       github_link:"https://github.com/CPJ03/download-all-links-from-a-page",
       images: ["/assets/projects/web%20scraping.png"]
+    },
+    {
+      title:"Personal Portfolio",
+      description:"A next.js website for my personal portfolio.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+      github_link:"https://github.com/CPJ03/chengpinjie",
+      images: ["/assets/projects/personal Web.png"]
     }
   ],
   education: [
@@ -146,6 +161,7 @@ export const resumeData = {
       { name: "React Native", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/react-native.png" },
       { name: "Flutter", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/flutter.png" },
       { name: "HTML/CSS/JS", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/html css javascript.png" },
+      { name: "TypeScript", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/typescript.png" },
       { name: "FastAPI", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/fastapi.png" },
       { name: "Django", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/django.png" },
       { name: "MySQL", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/mysql.png" },

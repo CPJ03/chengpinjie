@@ -43,6 +43,9 @@ export default function Header() {
                     <Link href="#contact" className="hover:text-neutral-600 transition-colors">
                         Contact
                     </Link>
+                    <Link href={resumeData.contact.CV} target="_blank" className="hover:text-neutral-600 transition-colors">
+                        CV
+                    </Link>
                 </div>
             </nav>
         </header>

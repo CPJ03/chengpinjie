@@ -8,11 +8,11 @@ export default function TechStacks() {
 
     return (
         <div className="flex flex-col items-center justify-center gap-6 mt-12">
-            <div className="flex flex-wrap justify-center gap-5 max-w-4xl">
+            <div className="flex flex-wrap justify-center gap-1 max-w-4xl">
                 {stacks.map((tech, index) => (
                     <div
                         key={index}
-                        className="group relative flex items-center justify-center"
+                        className="group relative flex h-20 w-20 items-center justify-center transition-transform duration-300 ease-out hover:scale-125 hover:z-10 hover:drop-shadow-xl"
                         title={tech.name}
                     >
                         <Image
@@ -20,7 +20,7 @@ export default function TechStacks() {
                             alt={tech.name}
                             width={60}
                             height={60}
-                            className="object-contain hover:opacity-80 transition-opacity duration-300"
+                            className="object-contain transition-all duration-300 ease-out"
                             unoptimized
                         />
                         <span className="absolute bottom-full mb-2 px-2 py-1 bg-black/80 text-white text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">

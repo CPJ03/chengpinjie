@@ -4,11 +4,13 @@ import Section from "@/components/ui/Section";
 import { resumeData } from "@/data/resume";
 import Image from "next/image";
 import { useState } from "react";
+import ImageModal from "@/components/ui/ImageModal";
 
 function ExperienceCard({ job, index }: { job: any; index: number }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovering, setIsHovering] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const hasImages = job.images && job.images.length > 0;
     const hasMultipleImages = job.images && job.images.length > 1;
 
@@ -43,16 +45,29 @@ function ExperienceCard({ job, index }: { job: any; index: number }) {
     return (
         <div className="grid md:grid-cols-[1fr_2fr] gap-8">
             <div>
+                {job.logo && (
+                    <div className="mb-4">
+                        <Image
+                            src={job.logo}
+                            alt={`${job.company} logo`}
+                            width={250}
+                            height={60}
+                            className="object-contain"
+                            unoptimized
+                        />
+                    </div>
+                )}
                 <h3 className="text-2xl font-semibold">{job.company}</h3>
                 <p className="text-white mt-2">{job.period}</p>
                 
                 {/* Image Carousel */}
                 {hasImages && (
                     <div 
-                        className="relative aspect-square rounded-lg overflow-hidden border border-white/20 mt-6 group transition-transform duration-200 ease-out"
+                        className="relative aspect-square rounded-lg overflow-hidden border border-white/20 mt-6 group transition-transform duration-200 ease-out cursor-pointer"
                         onMouseMove={handleMouseMove}
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
+                        onClick={() => setIsModalOpen(true)}
                         style={{
                             transform: isHovering 
                                 ? `translate3d(${-mousePosition.x * 20}px, ${-mousePosition.y * 20}px, 0) rotateX(${-mousePosition.y * 10}deg) rotateY(${-mousePosition.x * 10}deg)` 
@@ -73,13 +88,13 @@ function ExperienceCard({ job, index }: { job: any; index: number }) {
                             <>
                                 <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
                                     <button
-                                        onClick={prevImage}
+                                        onClick={(e) => { e.stopPropagation(); prevImage(); }}
                                         className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
                                     >
                                         &lt;
                                     </button>
                                     <button
-                                        onClick={nextImage}
+                                        onClick={(e) => { e.stopPropagation(); nextImage(); }}
                                         className="bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-colors"
                                     >
                                         &gt;
@@ -91,7 +106,7 @@ function ExperienceCard({ job, index }: { job: any; index: number }) {
                                     {job.images.map((_: any, i: number) => (
                                         <button
                                             key={i}
-                                            onClick={() => setCurrentImageIndex(i)}
+                                            onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(i); }}
                                             className={`w-2 h-2 rounded-full transition-all ${
                                                 i === currentImageIndex ? 'bg-white w-4' : 'bg-white/50'
                                             }`}
@@ -138,6 +153,15 @@ function ExperienceCard({ job, index }: { job: any; index: number }) {
                     </div>
                 )}
             </div>
+            
+            {hasImages && (
+                <ImageModal
+                    src={job.images[currentImageIndex]}
+                    alt={`${job.company} photo ${currentImageIndex + 1}`}
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                />
+            )}
         </div>
     );
 }

@@ -5,6 +5,7 @@ import { resumeData } from "@/data/resume";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import ImageModal from "@/components/ui/ImageModal";
 
 export default function Projects() {
     return (
@@ -32,6 +33,7 @@ export default function Projects() {
 function ProjectCard({ project, index }: { project: any; index: number }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const hasImages = project.images && project.images.length > 0;
     const hasMultipleImages = project.images && project.images.length > 1;
 
@@ -72,13 +74,18 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl mb-4">
                 {hasImages ? (
                     <>
-                        <Image
-                            src={project.images[currentImageIndex]}
-                            alt={project.title}
-                            fill
-                            className="object-cover transition-all duration-700 group-hover:scale-105"
-                            unoptimized
-                        />
+                        <div 
+                            className="cursor-pointer"
+                            onClick={() => setIsModalOpen(true)}
+                        >
+                            <Image
+                                src={project.images[currentImageIndex]}
+                                alt={project.title}
+                                fill
+                                className="object-cover transition-all duration-700 group-hover:scale-105"
+                                unoptimized
+                            />
+                        </div>
                         {/* Carousel Controls */}
                         {hasMultipleImages && (
                             <div className="absolute inset-0 flex items-center justify-between px-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -154,7 +161,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
                         {project.description}
                     </p>
                     <div className="flex gap-2 mt-4 flex-wrap">
-                        {project.technologies.slice(0, 3).map((tech: string, i: number) => (
+                        {project.technologies.map((tech: string, i: number) => (
                             <span key={i} className="text-xs border border-neutral-600 px-2 py-1 rounded-full text-white">
                                 {tech}
                             </span>
@@ -162,6 +169,13 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
                     </div>
                 </div>
             </div>
+            
+            <ImageModal
+                src={project.images[currentImageIndex]}
+                alt={project.title}
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </div>
     );
 }
