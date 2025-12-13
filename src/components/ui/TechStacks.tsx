@@ -7,8 +7,8 @@ export default function TechStacks() {
     const stacks = resumeData.techStacks["SOFTWARE DEVELOPER"];
 
     return (
-        <div className="flex flex-col items-center justify-center gap-6 mt-12">
-            <div className="flex flex-wrap justify-center gap-1 max-w-4xl">
+        <div className="flex flex-col items-center justify-center gap-6 mt-8">
+            <div className="flex flex-wrap justify-center gap-1 max-w-5xl">
                 {stacks.map((tech, index) => (
                     <div
                         key={index}
