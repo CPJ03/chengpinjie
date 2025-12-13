@@ -3,6 +3,7 @@ import Contact from "@/components/sections/Contact";
 import Experience from "@/components/sections/Experience";
 import Projects from "@/components/sections/Projects";
 import TechStacks from "@/components/ui/TechStacks";
+import FloatingNextButton from "@/components/ui/FloatingNextButton";
 import { resumeData } from "@/data/resume";
 
 export default function Home() {
@@ -21,7 +22,7 @@ export default function Home() {
             {/* Scrollable Content */}
             <div className="relative z-10">
                 {/* Hero Section */}
-                <section className="h-screen w-full relative flex flex-col items-center justify-center px-4">
+                <section id="hero" className="h-screen w-full relative flex flex-col items-center justify-center px-4">
                     <div className="z-10 flex flex-col items-center justify-center text-center">
                         <h1 className="text-massive font-bold tracking-tighter text-white leading-none">
                             {resumeData.name.split(" ")[0]}<br />
@@ -41,6 +42,9 @@ export default function Home() {
                     <Contact />
                 </div>
             </div>
+
+            {/* Floating Next Button */}
+            <FloatingNextButton />
         </main>
     );
 }
