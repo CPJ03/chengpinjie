@@ -25,6 +25,44 @@ export const resumeData = {
     // Creative
     "Figma", "Davinci Resolve", "Adobe Premiere", "Adobe Illustrator", "Adobe Photoshop", "Capcut", "Canva"
   ],
+  categorizedSkills: {
+    "Front-end": [
+      { name: "Figma", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/FIgma.png" },
+      { name: "HTML/CSS/JS", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/html css javascript.png" },
+      { name: "TypeScript", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/typescript.png" },
+      { name: "Dart", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/dart.png" },
+      { name: "Tailwind CSS", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Tailwind.png" },
+    ],
+    "Back-end": [
+      { name: "MySQL", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/mysql.png" },
+      { name: "Azure", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/azure.png" },
+      { name: "Firebase", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Firebase.png" },
+      { name: "MongoDB", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/mongodb.png" }
+    ],
+    "Framework": [
+      { name: "Flutter", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/flutter.png" },
+      { name: "React Native", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/react-native.png" },
+      { name: "Expo", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/expo.png" },
+      { name: "React.js", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/react.png" },
+      { name: "Next.js", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Next.png" },
+      { name: "FastAPI", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/fastapi.png" },
+      { name: "OpenCV", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/opencv.png" },
+      { name: "Django", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/django.png" },
+      { name: "Flask", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/flask.png" },
+      { name: "OpenRouter", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/OpenRouter.png" },
+      { name: "Docker", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Docker_Logo.png" },
+      { name: "Ultralytics", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Ultralytics.png" },
+      { name: "OutSystems", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/outsystems.png" }
+    ],
+    "Data Processing | Artificial Intelligence | Machine Learning": [
+      { name: "Python", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/python.png" },
+      { name: "TensorFlow", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/tensorflow_logo.png" },
+      { name: "YOLOv8", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Ultralytics.png" },
+      { name: "LlamaParse", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/LlamaIndex.png" },
+      { name: "LangChain", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/LangChain.png" },
+      { name: "Gradio", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/gradio.png" }
+    ]
+  },
   experience: [
     {
       company: "PETRONAS Technical Services Sdn Bhd",
@@ -158,9 +196,11 @@ export const resumeData = {
     "SOFTWARE DEVELOPER": [
       { name: "Python", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/python.png" },
       { name: "Next.js", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Next.png" },
+      { name: "React.js", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/react.png" },
       { name: "React Native", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/react-native.png" },
       { name: "Flutter", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/flutter.png" },
       { name: "HTML/CSS/JS", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/html css javascript.png" },
+      { name: "Tailwind CSS", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Tailwind.png" },
       { name: "TypeScript", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/typescript.png" },
       { name: "FastAPI", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/fastapi.png" },
       { name: "Django", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/django.png" },
@@ -176,7 +216,8 @@ export const resumeData = {
       { name: "YOLOv8", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/Ultralytics.png" },
       { name: "Gradio", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/gradio.png" },
       { name: "LangChain", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/LangChain.png" },
-      { name: "OpenRouter", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/OpenRouter.png" }
+      { name: "OpenRouter", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/OpenRouter.png" },
+      { name: "OutSystems", logo: "/assets/projects/Tech Stacks/SOFTWARE DEVELOPER/outsystems.png" }
     ]
   },
 };

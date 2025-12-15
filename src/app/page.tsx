@@ -24,7 +24,7 @@ export default function Home() {
                 {/* Hero Section */}
                 <section id="hero" className="h-screen w-full relative flex flex-col items-center justify-center px-4">
                     <div className="z-10 flex flex-col items-center justify-center text-center">
-                        <h1 className="text-massive font-bold tracking-tighter text-transparent leading-none drop-shadow-[0_8px_32px_rgba(0,0,0,0.8)] [-webkit-text-stroke:_2px_rgba(255,255,255,1)] ]">
+                        <h1 className="text-massive font-bold tracking-tighter text-transparent leading-none drop-shadow-[0_8px_32px_rgba(255,255,255,0.8)] [-webkit-text-stroke:_2px_rgba(255,255,255,1)] [text-shadow:_0_0_20px_rgba(255,255,255,0.4),_0_0_40px_rgba(255,255,255,0.2)]">
                             {resumeData.name.split(" ")[0]}<br />
                             {resumeData.name.split(" ").slice(1).join(" ")}
                         </h1>

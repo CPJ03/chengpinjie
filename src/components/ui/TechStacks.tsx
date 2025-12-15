@@ -8,11 +8,11 @@ export default function TechStacks() {
 
     return (
         <div className="flex flex-col items-center justify-center gap-6 mt-8">
-            <div className="flex flex-wrap justify-center gap-1 max-w-5xl">
+            <div className="flex flex-wrap justify-center gap-x-1 gap-y-0 max-w-5xl">
                 {stacks.map((tech, index) => (
                     <div
                         key={index}
-                        className="group relative flex h-20 w-20 items-center justify-center transition-transform duration-300 ease-out hover:scale-125 hover:z-10 hover:drop-shadow-xl"
+                        className="group relative flex h-12 w-20 items-center justify-center transition-transform duration-300 ease-out hover:scale-125 hover:z-10 hover:drop-shadow-xl"
                         title={tech.name}
                     >
                         <Image

@@ -1,11 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { resumeData } from "@/data/resume";
 
 export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isHeaderHovered, setIsHeaderHovered] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 100);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -26,8 +37,16 @@ export default function Header() {
     return (
         <>
             <header className="fixed top-0 left-0 w-full z-50 px-6 py-6 flex justify-between items-start text-black pointer-events-none">
-                {/* Name Section with Glassmorphism - Hidden on mobile */}
-                <div className="hidden md:flex flex-col pointer-events-auto px-6 py-4 rounded-2xl relative overflow-hidden shadow-lg shadow-black/10">
+                {/* Name Section with Glassmorphism - Collapses on scroll */}
+                <div
+                    className={`hidden md:flex flex-col pointer-events-auto rounded-2xl relative overflow-hidden shadow-lg shadow-black/10 transition-all duration-500 ${
+                        isScrolled && !isHeaderHovered
+                            ? "w-16 h-16 items-center justify-center"
+                            : "px-6 py-4"
+                    }`}
+                    onMouseEnter={() => setIsHeaderHovered(true)}
+                    onMouseLeave={() => setIsHeaderHovered(false)}
+                >
                     {/* Glass background */}
                     <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-2xl" />
 
@@ -35,10 +54,21 @@ export default function Header() {
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/30 via-transparent to-white/10 opacity-50" style={{ padding: '1px' }} />
 
                     {/* Content */}
-                    <div className="relative z-10">
+                    <div className={`relative z-10 transition-all duration-500 ${
+                        isScrolled && !isHeaderHovered ? "opacity-0 hidden" : "opacity-100"
+                    }`}>
                         <span className="font-bold text-lg tracking-tight block">{resumeData.name}</span>
                         <span className="text-sm text-neutral-700 block mt-1">{resumeData.title}</span>
                     </div>
+
+                    {/* Collapsed Icon */}
+                    {isScrolled && !isHeaderHovered && (
+                        <div className="relative z-10 flex flex-col gap-1.5 transition-opacity duration-500">
+                            <span className="w-4 h-0.5 bg-black" />
+                            <span className="w-4 h-0.5 bg-black" />
+                            <span className="w-4 h-0.5 bg-black" />
+                        </div>
+                    )}
                 </div>
 
                 {/* Desktop Navigation */}
